@@ -22,4 +22,13 @@ function buyRank() {
 
 var mainGameLoop = window.setInterval(function() {
     makePoint()
-  }, 1000)
+    }, 1000)
+
+var saveGameLoop = window.setInterval(function() {
+    localStorage.setItem("67Idlesave", JSON.stringify(gameData))
+  }, 15000)
+
+var savegame = JSON.parse(localStorage.getItem("67Idlesave"))
+if (savegame !== null) {
+    gameData = savegame
+}
