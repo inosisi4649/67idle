@@ -14,7 +14,7 @@ function buyRank() {
     if (gameData.point >= gameData.rankcost) {
         gameData.point -= gameData.rankcost
         gameData.rank += 1
-        gameData.rankcost *= 2
+        gameData.rankcost = rankcost * (Math.log(rank+1) / Math.log(2.0))
         document.getElementById("pointbank").innerHTML = "You have " + gameData.point + " Points."
         document.getElementById("perClickUpgrade").innerHTML = "Rankup! (Currently Rank " + gameData.rank + ") Cost: " + gameData.rankcost + " Points"
     }
@@ -32,3 +32,4 @@ var savegame = JSON.parse(localStorage.getItem("sixtysevenIdlesave"))
 if (savegame !== null) {
     gameData = savegame
 }
+var value = Math.log(10.0) / Math.log(2.0);
