@@ -9,6 +9,8 @@ var gameData = {
 var savegame = JSON.parse(localStorage.getItem("sixtysevenIdlesave"))
 if (savegame !== null) {
     gameData = savegame
+    document.getElementById("pointbank").innerHTML = "You have " + gameData.point + " Points."
+    document.getElementById("perClickUpgrade").innerHTML = "Rankup! (Currently Rank " + gameData.rank + ") Cost: " + gameData.rankcost + " Points"
 }
 
 function makePoint() {
