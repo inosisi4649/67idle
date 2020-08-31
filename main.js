@@ -5,8 +5,11 @@ var gameData = {
     rank: 1
 }
 
-document.getElementById("pointbank").innerHTML = "You have " + gameData.point + " Points."
-document.getElementById("perClickUpgrade").innerHTML = "Rankup! (Currently Rank " + gameData.rank + ") Cost: " + gameData.rankcost + " Points"
+// Load save
+var savegame = JSON.parse(localStorage.getItem("sixtysevenIdlesave"))
+if (savegame !== null) {
+    gameData = savegame
+}
 
 function makePoint() {
     gameData.point += gameData.pointPerClick
@@ -31,8 +34,4 @@ var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("sixtysevenIdlesave", JSON.stringify(gameData))
   }, 10000)
 
-var savegame = JSON.parse(localStorage.getItem("sixtysevenIdlesave"))
-if (savegame !== null) {
-    gameData = savegame
-}
 var value = Math.log(10.0) / Math.log(2.0);
