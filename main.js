@@ -5,6 +5,9 @@ var gameData = {
     rank: 1
 }
 
+document.getElementById("pointbank").innerHTML = "You have " + gameData.point + " Points."
+document.getElementById("perClickUpgrade").innerHTML = "Rankup! (Currently Rank " + gameData.rank + ") Cost: " + gameData.rankcost + " Points"
+
 function makePoint() {
     gameData.point += gameData.pointPerClick
     document.getElementById("pointbank").innerHTML = "You have " + gameData.point + " Points."
