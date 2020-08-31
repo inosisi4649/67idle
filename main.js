@@ -25,10 +25,10 @@ var mainGameLoop = window.setInterval(function() {
     }, 1000)
 
 var saveGameLoop = window.setInterval(function() {
-    localStorage.setItem("67Idlesave", JSON.stringify(gameData))
-  }, 15000)
+    localStorage.setItem("sixtysevenIdlesave", JSON.stringify(gameData))
+  }, 10000)
 
-var savegame = JSON.parse(localStorage.getItem("67Idlesave"))
+var savegame = JSON.parse(localStorage.getItem("sixtysevenIdlesave"))
 if (savegame !== null) {
     gameData = savegame
 }
