@@ -6,11 +6,27 @@
     </head>
     <body>
         <p>Idle "67"</p>
+        <div id="startMenu">
+            <button onclick="tab('pointMenu')">Point</button>
+            <button onclick="tab('rankMenu')">Rank</button>
+        </div>
+        <div id="automatic">
+            <button onclick="tab('autoMenu')">Automatic</button>
+        </div>
         <p id="pointbank">Nothing.</p>
-        <button onclick="makePoint()">Make Point</button>
-        <button onclick="buyRank()" id="perClickUpgrade">Rankup! (Currently Rank 1) Cost: 67 Points</button>
+        <p id="rankpointbank"></p>
+        <div id="pointMenu">
+            <button onclick="clickPoint()">Make Point</button>
+            <button onclick="buyRank()" id="rankup">Rankup! (Currently Rank 1) Cost: 67 Points</button>
+        </div>
+        <div id="rankMenu">
+            <button onclick="clickUpgrade()" id="perClickUpgrade">Upgrade Click Power. Cost: 1 RP</button>
+            <button onclick="unlockauto()" id="unlockauto">Unlock Autoclicker. Cost: 1 RP</button>
+        </div>
+        <div id="autoMenu">
+        </div>
         <script src="main.js" charset="utf-8" type="text/javascript"></script>
-        <p>Alpha 7</p>
+        <p>Alpha 8</p>
         <a href="changelog.html">changelog</a><br>
     </body>
 </html>
